@@ -25,11 +25,11 @@ export const TaskList = () => {
 
   return (
       <ul>
-        {visibleTasks.map(task => (
+        {/* {visibleTasks.map(task => (
           <li key={task.id}>
             <Task task={task} />
           </li>
-        ))}
+        ))} */}
       </ul>
   );
 };

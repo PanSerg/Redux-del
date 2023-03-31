@@ -1,5 +1,3 @@
-import { MdClose } from 'react-icons/md';
-import css from './Task.module.css';
 import { useDispatch } from 'react-redux';
 // Импортируем генератор экшена
 import { deleteTask, toggleCompleted } from '../../redux/actions';
