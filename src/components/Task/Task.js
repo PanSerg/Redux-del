@@ -1,17 +1,22 @@
 import { MdClose } from 'react-icons/md';
 import css from './Task.module.css';
+import { useDispatch } from 'react-redux';
+// Импортируем генератор экшена
+import { deleteTask } from '../../redux/actions';
 
 export const Task = ({ task }) => {
+  // Получаем ссылку на функцию отправки экшенов
+  const dispatch = useDispatch();
+
+  // Вызываем генератор экшена и передаём идентификатор задачи
+  // Отправляем результат - экшен удаления задачи
+  const handleDelete = () => dispatch(deleteTask(task.Id));
   return (
-    <div className={css.wrapper}>
-      <input
-        type="checkbox"
-        className={css.checkbox}
-        checked={task.completed}
-      />
-      <p className={css.text}>{task.text}</p>
-      <button className={css.btn}>
-        <MdClose size={24} />
+    <div>
+      <input type="checkbox"/>
+      <p>{task.text}</p>
+      <button type="button" onClick={handleDelete}>
+        Delete
       </button>
     </div>
   );

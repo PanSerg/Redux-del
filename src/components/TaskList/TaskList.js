@@ -24,12 +24,12 @@ export const TaskList = () => {
   const visibleTasks = getVisibleTasks(tasks, statusFilter);
 
   return (
-    <ul>
-      {visibleTasks.map(task => (
-        <li key={task.id}>
-          <Task task={task} />
-        </li>
-      ))}
-    </ul>
+      <ul>
+        {visibleTasks.map(task => (
+          <li key={task.id}>
+            <Task task={task} />
+          </li>
+        ))}
+      </ul>
   );
 };
