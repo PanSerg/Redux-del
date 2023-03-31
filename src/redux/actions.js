@@ -1,5 +1,4 @@
 import { nanoid } from "nanoid";
-import { useDispatch } from "react-redux";
 
 export const addTask = text => {
     return {
@@ -30,10 +29,4 @@ export const setStatusFilter = value => {
       type: 'filters/setStatusFilter',
       payload: value,
     };
-};
-
-
-const MyComponent = () => {
-  // Получаем ссылку на функцию отправки экшенов
-  const dispatch = useDispatch();
 };
