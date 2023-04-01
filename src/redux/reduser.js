@@ -1,4 +1,3 @@
-import { combineReducers } from 'redux';
 import { statusFilters } from './constants';
 
 const tasksInitialState = [
@@ -8,9 +7,8 @@ const tasksInitialState = [
   { id: 3, text: 'Discover Redux', completed: false },
   { id: 4, text: 'Build amazing apps', completed: false },
 ];
-// Отвечает только за обновление свойства tasks
-// Теперь значением параметра state будет массив задач
-const tasksReducer = (state = tasksInitialState, action) => {
+
+export const tasksReducer = (state = tasksInitialState, action) => {
   switch (action.type) {
     case 'tasks/addTask':
       return [...state, action.payload];
@@ -27,12 +25,12 @@ const tasksReducer = (state = tasksInitialState, action) => {
       return state;
   }
 };
+
 const filtersInitialState = {
   status: statusFilters.all,
 };
-// Отвечает только за обновление свойства filters
-// Теперь значением параметра state будет объект фильтров
-const filtersReducer = (state = filtersInitialState, action) => {
+
+export const filtersReducer = (state = filtersInitialState, action) => {
   switch (action.type) {
     case 'filters/setStatusFilter':
       return {
@@ -43,8 +41,3 @@ const filtersReducer = (state = filtersInitialState, action) => {
       return state;
   }
 };
-
-export const rootReducer = combineReducers({
-  task: tasksReducer,
-  filters: filtersReducer,
-});
